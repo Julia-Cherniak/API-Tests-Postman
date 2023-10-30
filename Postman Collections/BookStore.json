@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "18d7df13-fa92-476f-91b8-5dabde6f79ee",
+		"name": "Account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a02fbbf-e7a3-4f3b-bc5e-1bfabdcd799d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f9b42061-bd3d-4f25-b30d-8d6ab9bcf6cc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"Julia2\",\n  \"password\": \"Co22111990!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/Account/v1/User"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f28f09b-ad48-4014-997e-fc54d127c170",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d915a2e5-12f8-4298-9f49-b15339d32e4c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"Julia2\",\n  \"password\": \"Co22111990!\"\n}"
+				},
+				"url": "{{baseUrl}}/Account/v1/GenerateToken"
+			},
+			"response": []
+		},
+		{
+			"name": "User Autorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c56efbc3-5197-4c52-b8be-0149ff4e1ee1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f43b23da-0921-47c9-9e5c-505e02d17ff3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"Julia2\",\n  \"password\": \"Co22111990!\"\n}"
+				},
+				"url": "{{baseUrl}}/Account/v1/Authorized"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edd2bb7f-4585-4cec-8b5d-c726cec8de84",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bfaad910-4f3f-48f1-aeb9-2cfae15e7667",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ikp1bGlhMiIsInBhc3N3b3JkIjoiQ28yMjExMTk5MCEiLCJpYXQiOjE2OTg1ODE1NzF9.1-0U4Yw6ZIh7m_0xdTLC7fXTea-XUtdjZcFWt3MN320"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/Account/v1/User/{{userID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d30183fa-dad3-428c-8df1-8ae1d9929a16",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "39636e46-7511-4998-84c2-ae0fdb4391d6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ikp1bGlhMiIsInBhc3N3b3JkIjoiQ28yMjExMTk5MCEiLCJpYXQiOjE2OTg1ODE1NzF9.1-0U4Yw6ZIh7m_0xdTLC7fXTea-XUtdjZcFWt3MN320"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/Account/v1/User/{{userID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "207f5466-655d-4103-ad1e-7325c9b402b6",
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4de186f5-7ed1-486a-b865-3dbcfaa73957",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ikp1bGlhMiIsInBhc3N3b3JkIjoiQ28yMjExMTk5MCEiLCJpYXQiOjE2OTg1ODE1NzF9.1-0U4Yw6ZIh7m_0xdTLC7fXTea-XUtdjZcFWt3MN320"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/Account/v1/User/{{userID}}"
+			},
+			"response": []
+		}
+	]
+}
